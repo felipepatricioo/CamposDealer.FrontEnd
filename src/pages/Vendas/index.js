@@ -18,10 +18,22 @@ export default function Vendas() {
 
   const resultadoAPI = [
     {
-      name: "aaaaaaa",
+      idVenda: 1,
+      idCliente: 1,
+      idProduto: 2,
+      qtdVenda: 10,
+      vlrUnitarioVenda: 9.9,
+      dthVenda: "2022-06-12 01:49:36.0583092",
+      vlrTotalVenda: 99
     },
     {
-      name: "bbbbb",
+      idVenda: 2,
+      idCliente: 2,
+      idProduto: 1,
+      qtdVenda: 100,
+      vlrUnitarioVenda: 9.9,
+      dthVenda: "2022-06-12 01:49:36.0583092",
+      vlrTotalVenda: 990
     },
   ];
 
@@ -133,13 +145,21 @@ export default function Vendas() {
           </div>
 
           {resultadoAPI.map((venda) => (
-            <div>
-              <p>{venda.name}</p>
-              <div role="button" className="btn btn-success" onClick={sendForm}>
+            <div className="container">
+              <div className="row">
+                <div className="col-sm">Id Venda: {venda.idVenda}</div>
+                <div className="col-sm">Id Cliente: {venda.idCliente}</div>
+                <div className="col-sm">Id Produto: {venda.idProduto}</div>
+                <div className="col-sm">Qtd Venda: {venda.qtdVenda}</div>
+                <div className="col-sm">Vlr Unitario Venda: {venda.vlrUnitarioVenda}</div>
+                <div className="col-sm">Data Venda: {venda.dthVenda}</div>
+                <div className="col-sm">Vlr Total Venda: {venda.vlrTotalVenda}</div>
+                <div role="button" className="col-sm btn btn-success" onClick={sendForm}>
                 Editar
               </div>
-              <div role="button" className="btn btn-danger">
+              <div role="button" className="col-sm btn btn-danger">
                 Excluir
+              </div>
               </div>
             </div>
           ))}
